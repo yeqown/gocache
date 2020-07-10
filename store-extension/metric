@@ -1,0 +1,44 @@
+package extension
+
+import (
+	"github.com/eko/gocache/cache"
+	"github.com/eko/gocache/store"
+)
+
+var _ cache.ICache = &metricStoreWrapper{}
+
+type metricStoreWrapper struct {
+	store store.IStore
+}
+
+// NewMetricStoreWrapper 构造一个支持统计的存储实例
+func NewMetricStoreWrapper(originStore store.IStore) *metricStoreWrapper {
+	return &metricStoreWrapper{
+		store: originStore,
+	}
+}
+
+
+func (m metricStoreWrapper) Get(key interface{}) (interface{}, error) {
+	panic("implement me")
+}
+
+func (m metricStoreWrapper) Set(key interface{}, value interface{}, options *store.Options) error {
+	panic("implement me")
+}
+
+func (m metricStoreWrapper) Delete(key interface{}) error {
+	panic("implement me")
+}
+
+func (m metricStoreWrapper) Invalidate(options store.InvalidateOptions) error {
+	panic("implement me")
+}
+
+func (m metricStoreWrapper) Clear() error {
+	panic("implement me")
+}
+
+func (m metricStoreWrapper) GetType() string {
+	panic("implement me")
+}

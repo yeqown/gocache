@@ -21,7 +21,7 @@ type Cache struct {
 }
 
 // New instanciates a new cache entry
-func New(store store.StoreInterface) *Cache {
+func New(store store.IStore) *Cache {
 	return &Cache{
 		codec: codec.New(store),
 	}

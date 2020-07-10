@@ -60,6 +60,7 @@ func (s *RistrettoStore) Set(key interface{}, value interface{}, options *Option
 		options = s.options
 	}
 
+	fmt.Printf("cost=%d, duration=%d\n", options.CostValue(), options.ExpirationValue())
 	if set := s.client.SetWithTTL(key, value, options.CostValue(), options.ExpirationValue()); !set {
 		err = fmt.Errorf("An error has occurred while setting value '%v' on key '%v'", value, key)
 	}

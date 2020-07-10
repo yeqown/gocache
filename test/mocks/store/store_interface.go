@@ -10,7 +10,7 @@ import (
 	reflect "reflect"
 )
 
-// MockStoreInterface is a mock of StoreInterface interface
+// MockStoreInterface is a mock of IStore interface
 type MockStoreInterface struct {
 	ctrl     *gomock.Controller
 	recorder *MockStoreInterfaceMockRecorder

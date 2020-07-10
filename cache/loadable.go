@@ -21,12 +21,12 @@ type loadFunction func(key interface{}) (interface{}, error)
 // LoadableCache represents a cache that uses a function to load data
 type LoadableCache struct {
 	loadFunc   loadFunction
-	cache      CacheInterface
+	cache      ICache
 	setChannel chan *loadableKeyValue
 }
 
 // NewLoadable instanciates a new cache that uses a function to load data
-func NewLoadable(loadFunc loadFunction, cache CacheInterface) *LoadableCache {
+func NewLoadable(loadFunc loadFunction, cache ICache) *LoadableCache {
 	loadable := &LoadableCache{
 		loadFunc:   loadFunc,
 		cache:      cache,

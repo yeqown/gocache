@@ -106,10 +106,10 @@ func (mr *MockCodecInterfaceMockRecorder) Clear() *gomock.Call {
 }
 
 // GetStore mocks base method
-func (m *MockCodecInterface) GetStore() store.StoreInterface {
+func (m *MockCodecInterface) GetStore() store.IStore {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "GetStore")
-	ret0, _ := ret[0].(store.StoreInterface)
+	ret0, _ := ret[0].(store.IStore)
 	return ret0
 }
 
