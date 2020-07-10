@@ -14,6 +14,7 @@ type ICache interface {
 	Clear() error
 	GetType() string
 
+	// Get(key interface{}, out ...interface{}) (interface{}, error)
 	// GetOrSet(key interface{}, value interface{}) (interface{}, error)
 	// GetStore() store.IStore
 }

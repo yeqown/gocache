@@ -12,14 +12,12 @@ type marshalStoreWrapper struct {
 	store store.IStore
 }
 
-
 // NewMarshalStoreWrapper
 func NewMarshalStoreWrapper(oriStore store.IStore) *marshalStoreWrapper {
 	return &marshalStoreWrapper{
 		store: oriStore,
 	}
 }
-
 
 // Get obtains a value from cache and unmarshal value with given object
 func (w marshalStoreWrapper) Get(key interface{}, returnObj interface{}) (interface{}, error) {
@@ -66,4 +64,8 @@ func (w marshalStoreWrapper) Invalidate(options store.InvalidateOptions) error {
 // Clear reset all cache data
 func (w marshalStoreWrapper) Clear() error {
 	return w.store.Clear()
+}
+
+func (w marshalStoreWrapper) GetType() string {
+	panic("implement me")
 }
